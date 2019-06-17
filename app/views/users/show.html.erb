@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Expires at:</strong>
+  <%= @user.expires_at %>
+</p>
+
+<p>
+  <strong>Notificated at:</strong>
+  <%= @user.expires_at - 30.days %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.second_email %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.third_email %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
