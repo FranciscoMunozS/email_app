@@ -2,11 +2,53 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Hi <%= @user.name %></h1>
-    <p>
-      Sample mail sent using smtp.
-    </p>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <strong>Correo electronico</strong>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="https://undraw.oswaldlabs.com/mail-sent.svg" class="img-thumbnail">
+            </div>
+            <div class="col-md-8">
+              <h3>Datos del usuario</h3>
+              <hr>
+              <p>Nombre de usuario: <%= @user.name %></p>
+              <p>Fecha de vencimiento: <%= @user.expires_at %></p>
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Correo electronico</th>
+                    <th>Correo confirmacion</th>
+                    <th>CC</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td><%= @user.name %></td>
+                    <td><%= @user.email %></td>
+                    <td><%= @user.second_email %></td>
+                    <td><%= @user.third_email %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
